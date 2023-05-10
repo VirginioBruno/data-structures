@@ -4,7 +4,7 @@ int main()
 {
     int elements[] = { 12, 6, 4, 15, 10, 8 };
     int length = sizeof(elements) / sizeof(elements[0]);
-    // LinkedList* list = linked_newList();
+    //LinkedList* list = linked_newList();
 
     // linked_addElements(list, elements, length);
 

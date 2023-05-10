@@ -1,16 +1,5 @@
 {
     "files.associations": {
-        "malloc.h": "c",
-        "stdio.h": "c",
-        "list": "cpp",
-        "string_view": "c",
-        "stdbool.h": "c",
-        "array": "c",
-        "*.tcc": "c",
-        "memory": "c",
-        "istream": "c",
-        "functional": "c",
-        "tuple": "c",
-        "utility": "c"
+        "stdio.h": "c"
     }
 }

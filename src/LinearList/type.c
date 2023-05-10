@@ -6,4 +6,4 @@ typedef struct
 {
     int elements[MAX+1];
     int length;
-} LinearList;
+} List;

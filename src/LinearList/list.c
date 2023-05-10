@@ -2,14 +2,12 @@
 #include "type.c"
 #include <stdbool.h>
 
-LinearList newList() 
+void initialize(List* list) 
 {
-    LinearList list;
-    list.length = 0;
-    return list;
+    list->length = 0;
 }
 
-void addElements(LinearList* list, int elements[MAX], int length) 
+void addElements(List* list, int elements[MAX], int length) 
 {
     for (int i = 0; i < length; i++) 
     {
@@ -18,12 +16,7 @@ void addElements(LinearList* list, int elements[MAX], int length)
     }
 }
 
-int length(LinearList* list) 
-{
-    return list->length;
-}
-
-void showElements(LinearList* list) 
+void showElements(List* list) 
 {
     if (list->length <= 0) 
     {
@@ -39,7 +32,7 @@ void showElements(LinearList* list)
     printf("\n");
 }
 
-int linearSearch(LinearList* list, int value)
+int linearSearch(List* list, int value)
 {
     for (int i = 0; i < list->length; i++)
     {
@@ -50,7 +43,7 @@ int linearSearch(LinearList* list, int value)
     return -1;
 }
 
-int sentinelLinearSearch(LinearList* list, int value)
+int sentinelLinearSearch(List* list, int value)
 {
     int i = 0;
     list->elements[list->length] = value;
@@ -61,7 +54,7 @@ int sentinelLinearSearch(LinearList* list, int value)
     else return i;
 }
 
-int binarySearch(LinearList* list, int value)
+int binarySearch(List* list, int value)
 {
     int left = 0;
     int right = list->length - 1;
@@ -80,7 +73,7 @@ int binarySearch(LinearList* list, int value)
     return -1;
 }
 
-bool insertAt(LinearList* list, int index, int value) 
+bool insertAt(List* list, int index, int value) 
 {
     if (list->length == MAX) 
     {
@@ -105,7 +98,7 @@ bool insertAt(LinearList* list, int index, int value)
     return true;
 }
 
-bool sortedInsert(LinearList* list, int value) 
+bool sortedInsert(List* list, int value) 
 {
     if (list->length == MAX) 
     {
@@ -127,7 +120,7 @@ bool sortedInsert(LinearList* list, int value)
     return true;
 }
 
-void addSortedElements(LinearList* list, int elements[MAX], int length) 
+void addSortedElements(List* list, int elements[MAX], int length) 
 {
     for (int i = 0; i < length; i++) 
     {
@@ -135,7 +128,7 @@ void addSortedElements(LinearList* list, int elements[MAX], int length)
     }
 }
 
-bool removeValue(LinearList* list, int value) 
+bool removeValue(List* list, int value) 
 {
     if (list->length == 0) 
     {
