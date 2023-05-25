@@ -102,7 +102,7 @@ bool addElements(List* list, int values[MAX], int length)
     return true;   
 }
 
-int length(List* list) 
+int getLength(List* list) 
 {
     int i = list->start;
     int length = 0;
@@ -132,6 +132,8 @@ void showElements(List* list)
         printf("%i \n", list->nodes[i].value);
         i = list->nodes[i].next;
     }
+
+    printf("\n\n");
 }
 
 int sequencialSearch(List* list, int value) 

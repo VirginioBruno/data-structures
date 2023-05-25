@@ -4,25 +4,22 @@
 int main()
 {
     int elements[] = { 12, 6, 4, 15, 10, 8 };
-    int length = sizeof(elements) / sizeof(elements[0]);
-    List list;
+    int length = sizeof(elements) / sizeof(int);
+    List* list = newSortedList(elements, length);
 
-    initialize(&list);
+    printf("This list contains %i elements \n\n", list->length);
 
-    addSortedElements(&list, elements, length);
+    showElements(list);
 
-    printf("This list contains %i elements \n\n", list.length);
+    removeValue(list, 12);
 
-    showElements(&list);
-
-    removeValue(&list, 12);
-
-    showElements(&list);
+    showElements(list);
 
     int elementIndex = linearSearch(&list, 8);
     (elementIndex < 0) ? printf("Element not found \n") : printf("Element found at index %i \n", elementIndex);
 
-    printf("This list contains %i elements \n\n", list.length);
+    printf("This list contains %i elements \n\n", list->length);
 
+    free(list);
     return 0;
 }

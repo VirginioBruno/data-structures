@@ -1,13 +1,30 @@
 #include <stdio.h>
 #include "type.c"
 #include <stdbool.h>
+#include <stdlib.h>
 
-void initialize(List* list) 
+List* newEmptyList() 
 {
+    List *list = (List*)malloc(sizeof(List));
     list->length = 0;
+    return list;
 }
 
-void addElements(List* list, int elements[MAX], int length) 
+List* newList(int *elements, int length) 
+{
+    List *list = (List*)malloc(sizeof(List));
+    addElements(list, elements, length);
+    return list;
+}
+
+List* newSortedList(int *elements, int length) 
+{
+    List *list = (List*)malloc(sizeof(List));
+    addSortedElements(list, elements, length);
+    return list;
+}
+
+void addElements(List* list, int *elements, int length) 
 {
     for (int i = 0; i < length; i++) 
     {
@@ -136,7 +153,7 @@ bool removeValue(List* list, int value)
         return false;
     }
 
-    int index = binarySearch(list, value);
+    int index = linearSearch(list, value);
 
     if (index < 0)
     {
